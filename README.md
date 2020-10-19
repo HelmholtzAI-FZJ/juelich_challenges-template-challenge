@@ -88,6 +88,7 @@ have the challlenge introduced to them and be able to easily understand the prob
 Steps such as downloading the data, explanation of the problem, exploratory data analysis, baseline solutions, and example submissions 
 should be included.
 
+Here is an example of what it could look like: https://gitlab.version.fz-juelich.de/MLDL_FZJ/juhaicu/jsc_internal/superhaicu/vouchers/j-lich-challenges/challenges/covidx_challenge/-/blob/master/notebook.ipynb
 ## 8) Edit run.sh
 
 Please edit `run.sh` if needed. This script will make all the archives needed for the challenge. More details are given in `run.sh`.
