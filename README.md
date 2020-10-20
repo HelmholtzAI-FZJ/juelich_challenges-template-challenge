@@ -67,7 +67,7 @@ Please dit `challenge_config.yaml` and change everything which is specific to yo
 More documentation about the fields is given at <https://evalai.readthedocs.io/en/latest/configuration.html>
 
 The most important parts to modify are the fields in the top of the file, they contain basic information about the challenge.
-Plase also chalenge the leaderboard section. In the leaderboard section, please put all the metric names you want to display in the leaderboard.
+Plase also change the leaderboard section. In the leaderboard section, please put all the metric names you want to display in the leaderboard.
 The metric names correspond to the metric names you defined in `evaluation_script/main.py`.
 `default_order_by` defines the metric you use to rank the participants.
 
@@ -88,6 +88,7 @@ have the challlenge introduced to them and be able to easily understand the prob
 Steps such as downloading the data, explanation of the problem, exploratory data analysis, baseline solutions, and example submissions 
 should be included.
 
+Here is an example of what it could look like: https://gitlab.version.fz-juelich.de/MLDL_FZJ/juhaicu/jsc_internal/superhaicu/vouchers/j-lich-challenges/challenges/covidx_challenge/-/blob/master/notebook.ipynb
 ## 8) Edit run.sh
 
 Please edit `run.sh` if needed. This script will make all the archives needed for the challenge. More details are given in `run.sh`.
