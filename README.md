@@ -83,42 +83,58 @@ this will displayed in the frontend as well.
 
 ## 7) Edit notebook.ipynb
 
-Please edit `notebook.ipynb`. This part is important for the participants. This is given to the participants so that they can
-have the challlenge introduced to them and be able to easily understand the problem and start to submit easily. 
+Please edit `notebook.ipynb`. This part is important for the participants. This is given to the participants so that they can have the challlenge introduced to them and be able to easily understand the problem and start to submit easily. 
 Steps such as downloading the data, explanation of the problem, exploratory data analysis, baseline solutions, and example submissions 
 should be included.
 
 Here is an example of what it could look like: https://gitlab.version.fz-juelich.de/MLDL_FZJ/juhaicu/jsc_internal/superhaicu/vouchers/j-lich-challenges/challenges/covidx_challenge/-/blob/master/notebook.ipynb
-## 8) Edit run.sh
 
-Please edit `run.sh` if needed. This script will make all the archives needed for the challenge. More details are given in `run.sh`.
-Here is a short description of the files that `run.sh` need to create:
+## 8) Create challenge compressed archives
 
-- `challenge_config.zip`. This archive contains the challenge configuration, this file will be uploaded at the frontend by yourself
-to create the challenge
-- `data_public_leaderboard_phase.zip`. This archive is given to the users for the public leaderboard phase, so you need to upload
-it somehwere in a public link.
-- `data_private_leaderboard_phase.zip`. This archive is given to the users for the private leaderboard phase, so you need to upload
-it somehwere in a public link.
+In order to upload the challenge in the frontend, you need to create the following archives:
 
-`run.sh` should work as is, but if you have any a additional files to included in the data archives (such as images), you need to change it.
-When `run.sh` is ready, please run it:
+- `evaluation_script.zip`: contains the contents of the folder `evaluation_script`
+- `challenge_config.zip`: contains `evaluation_script.zip`, the folder `annotations/`, the file `challenge_config.yaml`, the folder `templates`, the logo, and optionally the notebook.
 
-`./run.sh`
+Here is how the archive contents should look like:
 
-After running the script, you should have these files:
+```
+Archive:  challenge_config.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+     1292  2020-11-20 14:48   evaluation_script.zip
+     2362  2020-11-20 14:48   challenge_config.yaml
+   107701  2018-02-26 15:17   logo.png
+   473424  2020-09-17 09:59   notebook.ipynb
+       49  2020-11-20 14:22   templates/challenge_phase_1_description.html
+       26  2020-09-17 11:21   templates/challenge_phase_2_description.html
+     5658  2020-11-20 14:22   templates/description.html
+       85  2020-09-08 08:55   templates/evaluation_details.html
+      244  2020-11-20 14:22   templates/submission_guidelines.html
+     1905  2020-11-20 14:22   templates/terms_and_conditions.html
+     2572  2020-11-20 14:44   annotations/submission.csv
+    16724  2020-09-15 21:55   annotations/submission_test.csv
+     2572  2020-09-15 21:55   annotations/submission_valid.csv
+     8142  2020-09-15 21:55   annotations/test.csv
+    10704  2020-09-15 21:55   annotations/train.csv
+     2693  2020-09-15 21:55   annotations/valid.csv
+---------                     -------
+   636153                     16 files
+```
 
-- `challenge_config.zip`
-- `data_public_leaderboard_phase.zip`
-- `data_private_leaderboard_phase.zip`
 
-Please then upload the data archives in a public link, and reference the links
+Please also prepare archives that will be distributed to the participants:
+
+- `data_public_leaderboard_phase.zip`. This archive is given to the users for the public leaderboard phase, so you need to upload it somehwere in a public link. This should contain `annotations/train.csv` (public training data) and `annotations/submission_valid.csv` (dummy submission for the validation data) and everything that participants need for training (e.g., images for training or validation data)
+- `data_private_leaderboard_phase.zip`. This archive is given to the users for the private leaderboard phase, so you need to upload it somehwere in a public link. This should contain `annotations/valid.csv` (public training data) and `annotations/submission_test.csv` (dummy submission for test data) and everything that participants need for training (e.g., images for training or test data).
+
+Please then upload the data archives in a public link, and point towards the public links
 in the HTML files in `templates/` as well as in the `notebook.ipynb`
 
 ## 9) Upload `challenge_config.zip` to the frontend
 
 - Go to the frontend
-- Create a new challenge, then upload `challenge_config.zip`.
+- Click at **Create a new challenge**, then upload `challenge_config.zip`.
 
 This is the last step. One of the administrators should then accept your challenge so that
 it becomes public.
