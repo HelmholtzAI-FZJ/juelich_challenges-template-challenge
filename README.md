@@ -5,7 +5,7 @@ at Jülich Callenges, please follow the steps. All the steps are necessary.
 
 ## 1) Clone the repository
 
-- `git clone https://gitlab.version.fz-juelich.de/MLDL_FZJ/juhaicu/jsc_internal/superhaicu/vouchers/j-lich-challenges/challenges/template_challenge my_challenge`
+- `git clone https://github.com/HelmholtzAI-FZJ/juelich_challenges-template-challenge my_challenge`
 - `cd my_challenge`
 
 ## 2) Download Raw data
